@@ -5,7 +5,7 @@ import {
 import { Form, Field } from 'formik';
 import { TextField } from 'formik-material-ui';
 import Proptypes from 'prop-types';
-import contactClasses from '../../style/login.module.scss';
+import contactClasses from '../styles/login.module.scss';
 import { validateField, validateEmail } from '../helpers/formFunctions';
 
 export default function FormBasic({ isSubmitting, submitForm }) {

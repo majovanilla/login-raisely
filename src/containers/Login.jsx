@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Paper } from '@material-ui/core';
 import { Formik } from 'formik';
-import contactClasses from '../style/login.module.scss';
+import contactClasses from '../styles/login.module.scss';
 import FormBasic from '../components/FormBasic';
-import { onSubmit } from '../components/helpers/formFunctions';
+import { onSubmit } from '../helpers/formFunctions';
 
 const Contact = () => (
   <Container className={contactClasses.formContainer}>
