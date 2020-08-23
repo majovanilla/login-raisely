@@ -71,11 +71,6 @@ function FormBasic(props) {
           validate={validateField}
         />
       </div>
-      <Field
-        type="hidden"
-        name="contactNumber"
-        component={TextField}
-      />
       {isSubmitting ? (
         <LinearProgress
           className='progressBar'
