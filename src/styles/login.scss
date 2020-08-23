@@ -1,0 +1,68 @@
+.formRow {
+  flex-direction: column;
+}
+
+.MuiFormControl-root {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+.submitButton {
+  width: 40%;
+}
+
+.MuiInputBase-root {
+  margin-bottom: 15px;
+}
+
+
+@media only screen and (min-width: 720px) {
+
+  .formContainer {
+    width: 70%;
+    display: flex !important;
+    justify-content: center;
+  }
+  
+  .formPaper {
+    margin: 90px 0;
+    padding: 30px;
+  }
+
+  .formControl {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formRow {
+    display: flex;
+    margin-top: 25px !important;
+    width: 100%;
+    flex-direction: row;
+  }
+  
+  .MuiFormControl-root {
+    width: 50%;
+  }
+
+  .inputRight {
+      margin-left: 5px !important;
+  }
+  
+  .formTextArea,
+  .email,
+  .formControl {
+    width: 100%;
+  }
+  
+  .submitButton {
+    width: 20%;
+    margin-top: 20px !important;
+    padding: 15px !important;
+  }
+  
+  .progressBar {
+    background-color: rgb(248, 187, 208) !important;
+  }
+}

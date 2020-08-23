@@ -4,9 +4,7 @@ import Login from './containers/Login';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Login />
-      </header>
+      <Login />
     </div>
   );
 }

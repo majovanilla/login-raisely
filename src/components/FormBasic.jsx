@@ -1,21 +1,27 @@
 import React from 'react';
 import {
-  Typography, Button, Icon, LinearProgress,
+  Typography, Button, LinearProgress
 } from '@material-ui/core';
 import { Form, Field } from 'formik';
 import { TextField } from 'formik-material-ui';
-import Proptypes from 'prop-types';
-import contactClasses from '../styles/login.module.scss';
+import PropTypes from 'prop-types';
 import { validateField, validateEmail } from '../helpers/formFunctions';
 
-export default function FormBasic({ isSubmitting, submitForm }) {
+const styles = {
+  root: {
+
+  },
+};
+
+function FormBasic(props) {
+  const { isSubmitting, submitForm  } = props;
+
   return (
-    <Form className={contactClasses.formControl} id="contact_form">
-      <Typography type="h3" align="center">Contact Me!</Typography>
-      <div className={contactClasses.formRow}>
+    <Form className='formControl' id="contact_form">
+      <Typography type="h3" align="center">Join here!</Typography>
+      <div className='formRow'>
         <Field
           component={TextField}
-          className={`${contactClasses.textField__left}`}
           required
           id="name"
           name="name"
@@ -26,7 +32,7 @@ export default function FormBasic({ isSubmitting, submitForm }) {
         />
         <Field
           component={TextField}
-          className={`${contactClasses.textField}`}
+          className='inputRight'
           required
           id="lastName"
           name="lastName"
@@ -37,7 +43,7 @@ export default function FormBasic({ isSubmitting, submitForm }) {
         />
       </div>
 
-      <div className={`${contactClasses.formRow}`}>
+      <div className='formRow'>
         <Field
           component={TextField}
           required
@@ -46,15 +52,15 @@ export default function FormBasic({ isSubmitting, submitForm }) {
           label="E-mail"
           variant="outlined"
           type="email"
-          className={contactClasses.email}
+          className='email'
           validate={validateEmail}
         />
       </div>
 
-      <div className={contactClasses.formRow}>
+      <div className='formRow'>
         <Field
           component={TextField}
-          className={contactClasses.formField}
+          className='formField'
           id="outlined-multiline-static"
           name="message"
           label="Message"
@@ -72,26 +78,27 @@ export default function FormBasic({ isSubmitting, submitForm }) {
       />
       {isSubmitting ? (
         <LinearProgress
-          className={contactClasses.progressBar}
+          className='progressBar'
         />
       ) : null}
       <Button
         variant="contained"
         color="default"
         disableElevation
-        endIcon={<Icon>send</Icon>}
-        className={contactClasses.submitButton}
+        className='submitButton'
         onClick={submitForm}
       >
-        Send
+        SEND
       </Button>
     </Form>
   );
 }
 
 FormBasic.propTypes = {
-  isSubmitting: Proptypes.func.isRequired,
-  submitForm: Proptypes.func.isRequired,
-  validateEmail: Proptypes.func.isRequired,
-  validateField: Proptypes.func.isRequired,
+  isSubmitting: PropTypes.func.isRequired,
+  submitForm: PropTypes.func.isRequired,
+  validateEmail: PropTypes.func.isRequired,
+  validateField: PropTypes.func.isRequired,
 };
+
+export default FormBasic;
