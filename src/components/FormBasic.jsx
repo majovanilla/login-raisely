@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { validateField, validateEmail } from '../helpers/formFunctions';
 
 export default function FormBasic(props) {
-  const { isSubmitting, submitForm  } = props;
+  const { isSubmitting, submitForm, handleBlur  } = props;
 
   return (
     <Form className='formControl' id="contact_form">
@@ -48,6 +48,7 @@ export default function FormBasic(props) {
           type="email"
           className='email'
           validate={validateEmail}
+          onBlur={handleBlur}
         />
       </div>
 
@@ -56,10 +57,8 @@ export default function FormBasic(props) {
           component={TextField}
           className='formField'
           id="outlined-multiline-static"
-          name="message"
-          label="Message"
-          multiline
-          rows={10}
+          name="password"
+          label="Password"
           variant="outlined"
           fullWidth={true}
           validate={validateField}

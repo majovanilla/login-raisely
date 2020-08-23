@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Paper } from '@material-ui/core';
 import { Formik } from 'formik';
 import FormBasic from '../components/FormBasic';
-import { onSubmit } from '../helpers/formFunctions';
+import { onSubmit, onTouch } from '../helpers/formFunctions';
 
 const Contact = () => (
   <Container className='formContainer'>
@@ -12,9 +12,10 @@ const Contact = () => (
           name: '',
           email: '',
           lastName: '',
-          message: '',
+          password: '',
         }}
         onSubmit={onSubmit}
+        handleBlur={onTouch}
       >
         {({
           submitForm, isSubmitting,
