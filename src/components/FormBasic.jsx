@@ -7,18 +7,12 @@ import { TextField } from 'formik-material-ui';
 import PropTypes from 'prop-types';
 import { validateField, validateEmail } from '../helpers/formFunctions';
 
-const styles = {
-  root: {
-
-  },
-};
-
-function FormBasic(props) {
+export default function FormBasic(props) {
   const { isSubmitting, submitForm  } = props;
 
   return (
     <Form className='formControl' id="contact_form">
-      <Typography type="h3" align="center">Join here!</Typography>
+      <Typography align="center">Join here!</Typography>
       <div className='formRow'>
         <Field
           component={TextField}
@@ -67,7 +61,7 @@ function FormBasic(props) {
           multiline
           rows={10}
           variant="outlined"
-          fullWidth="true"
+          fullWidth={true}
           validate={validateField}
         />
       </div>
@@ -90,10 +84,6 @@ function FormBasic(props) {
 }
 
 FormBasic.propTypes = {
-  isSubmitting: PropTypes.func.isRequired,
-  submitForm: PropTypes.func.isRequired,
-  validateEmail: PropTypes.func.isRequired,
-  validateField: PropTypes.func.isRequired,
+  isSubmitting: PropTypes.bool.isRequired,
+  submitForm: PropTypes.func.isRequired
 };
-
-export default FormBasic;
